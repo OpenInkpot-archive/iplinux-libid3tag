@@ -1,14 +1,15 @@
 Source: libid3tag
 Priority: optional
-Section: sound
+Section: core
 Build-Depends: cdbs, dpatch, debhelper (>= 4.1.0), gettext, zlib1g-dev, gperf
-Maintainer: Mad Maintainers <pkg-mad-maintainers@lists.alioth.debian.org>
-Uploaders: Sam Clegg <samo@debian.org>, Kurt Roeckx <kurt@roeckx.be>, Clément Stenac <zorglub@debian.org>
+XCS-Cross-Host-Build-Depends: debhelper (>= 5), gettext, cdbs, cdbs-embedded, autotools-dev, libtool, automake,  gperf
+XCS-Cross-Build-Depends: libz1-dev
+Maintainer: Alexander V. Nikolaev <avn@daemon.hole.ru>
 Standards-Version: 3.6.1
 
 Package: libid3tag0
 Architecture: any
-Section: libs
+Section: core
 Depends: ${shlibs:Depends}
 Description: ID3 tag reading library from the MAD project
  ID3 tag manipulation library with full support for reading ID3v1, ID3v1.1,
@@ -17,8 +18,8 @@ Description: ID3 tag reading library from the MAD project
 
 Package: libid3tag0-dev
 Architecture: any
-Section: libdevel
-Depends: libid3tag0 (=${Source-Version}), pkg-config, zlib1g-dev
+Section: core
+Depends: libid3tag0 (=${Source-Version})
 Description: ID3 tag reading library from the MAD project
  ID3 tag manipulation library with full support for reading ID3v1, ID3v1.1,
  ID3v2.2, ID3v2.3, and ID3v2.4 tags, as well as support for writing ID3v1,

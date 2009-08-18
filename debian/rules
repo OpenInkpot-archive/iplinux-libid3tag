@@ -1,15 +1,14 @@
 #!/usr/bin/make -f
-# makefile for libid3tag - using cdbs
+# makefile for libmad
 
 # Uncomment this to turn on verbose mode. 
 #export DH_VERBOSE=1
 
 DEB_DH_MAKESHLIBS_ARGS_libid3tag0 = -V 'libid3tag0 (>= 0.15.1b)'
 
+
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
-include /usr/share/cdbs/1/rules/dpatch.mk
-
 
 DEB_CONFIGURE_EXTRA_FLAGS=--enable-shared
 ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
@@ -18,7 +17,5 @@ else
 DEB_CONFIGURE_EXTRA_FLAGS += --disable-profiling --disable-debugging
 endif
 
-clean::
-	# annoying lintian errors
-	rm -f config.cache libz/config.log \
-		libz/config.status compat.c frametype.c
+DEB_CONFIGURE_SCRIPT = $(CURDIR)/$(DEB_SRCDIR)/autogen.sh
+
