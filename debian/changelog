@@ -1,3 +1,9 @@
+libid3tag (0.15.1b-11.ip1) asimov; urgency=low
+
+  * Upload to IPLinux
+
+ -- Alexander V. Nikolaev <avn@daemon.hole.ru>  Thu, 20 Aug 2009 06:59:37 +0300
+
 libid3tag (0.15.1b-10) unstable; urgency=low
 
   * Reupload with the the CVS directories.
